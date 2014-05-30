@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -15,10 +15,61 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D1H-He-CSG">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="284"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZEk-Y3-Wtb">
+                                <rect key="frame" x="160" y="0.0" width="160" height="284"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oYz-fl-Oh4">
+                                <rect key="frame" x="0.0" y="284" width="160" height="284"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rw4-rV-h6e">
+                                <rect key="frame" x="160" y="284" width="160" height="284"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="D1H-He-CSG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="33C-zz-sBg"/>
+                            <constraint firstItem="ZEk-Y3-Wtb" firstAttribute="width" secondItem="rw4-rV-h6e" secondAttribute="width" id="3PI-Vc-jOe"/>
+                            <constraint firstItem="ZEk-Y3-Wtb" firstAttribute="height" secondItem="D1H-He-CSG" secondAttribute="height" id="8uc-Cc-SAq"/>
+                            <constraint firstItem="D1H-He-CSG" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="9xd-F0-eHb"/>
+                            <constraint firstItem="oYz-fl-Oh4" firstAttribute="height" secondItem="D1H-He-CSG" secondAttribute="height" id="B7g-Ug-rDt"/>
+                            <constraint firstItem="ZEk-Y3-Wtb" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="T7j-ir-bGl"/>
+                            <constraint firstItem="oYz-fl-Oh4" firstAttribute="top" secondItem="D1H-He-CSG" secondAttribute="bottom" id="TjC-a6-qHy"/>
+                            <constraint firstItem="oYz-fl-Oh4" firstAttribute="height" secondItem="rw4-rV-h6e" secondAttribute="height" id="XC3-ag-iW1"/>
+                            <constraint firstItem="rw4-rV-h6e" firstAttribute="top" secondItem="ZEk-Y3-Wtb" secondAttribute="bottom" id="fff-fE-y35"/>
+                            <constraint firstItem="oYz-fl-Oh4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="haF-G1-097"/>
+                            <constraint firstItem="ZEk-Y3-Wtb" firstAttribute="width" secondItem="D1H-He-CSG" secondAttribute="width" id="pRu-iO-x0u"/>
+                            <constraint firstAttribute="trailing" secondItem="ZEk-Y3-Wtb" secondAttribute="trailing" id="pTa-H0-aSe"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="oYz-fl-Oh4" secondAttribute="bottom" id="rYt-HP-Jdc"/>
+                            <constraint firstItem="ZEk-Y3-Wtb" firstAttribute="leading" secondItem="D1H-He-CSG" secondAttribute="trailing" id="wPr-sy-UmM"/>
+                            <constraint firstItem="oYz-fl-Oh4" firstAttribute="width" secondItem="D1H-He-CSG" secondAttribute="width" id="xo3-Id-t6x"/>
+                            <constraint firstItem="rw4-rV-h6e" firstAttribute="leading" secondItem="oYz-fl-Oh4" secondAttribute="trailing" id="zGp-vH-vFE"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="d0x-Nz-RQh" appends="YES" id="BRb-yG-e7V"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outletCollection property="imageViews" destination="D1H-He-CSG" id="miy-Lp-zkP"/>
+                        <outletCollection property="imageViews" destination="ZEk-Y3-Wtb" id="9eG-Q7-z0m"/>
+                        <outletCollection property="imageViews" destination="oYz-fl-Oh4" id="amx-zV-qN1"/>
+                        <outletCollection property="imageViews" destination="rw4-rV-h6e" id="NPT-77-2Di"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="d0x-Nz-RQh">
+                    <connections>
+                        <action selector="takePicture:" destination="vXZ-lx-hvc" id="eeL-t5-dVi"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>

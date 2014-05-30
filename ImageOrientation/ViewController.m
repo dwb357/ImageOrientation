@@ -13,17 +13,53 @@
 @end
 
 @implementation ViewController
-
-- (void)viewDidLoad
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    UIImageView*                _targetView;
 }
 
-- (void)didReceiveMemoryWarning
+-(void)viewDidLoad
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewDidLoad];
+    
+    for(UIImageView* imageView in _imageViews)
+    {
+        CALayer*    layer = imageView.layer;
+        layer.borderWidth = 1.;
+        layer.borderColor = [UIColor blackColor].CGColor;
+    }
+}
+
+- (IBAction)takePicture:(UITapGestureRecognizer*)sender
+{
+    _targetView = nil;
+    
+    // Find the containing UIImageView
+    for(UIImageView* imageView in _imageViews)
+    {
+        if(CGRectContainsPoint(imageView.bounds, [sender locationInView:imageView]))
+        {
+            _targetView = imageView;
+        }
+    }
+    
+    if(_targetView)
+    {
+        UIImagePickerController*    picker = [UIImagePickerController new];
+        picker.delegate = self;
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:picker animated:true completion:nil];
+    }
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+    UIImage*                original = info[UIImagePickerControllerOriginalImage];
+    CGImageRef              cgImage = original.CGImage;
+    UIImage*                natural = [UIImage imageWithCGImage:cgImage];
+    
+    _targetView.image = natural;
 }
 
 @end
